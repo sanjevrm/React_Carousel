@@ -45,7 +45,7 @@ import React, { useState } from 'react';
 import './App.css';
 
 const images = [
-  '/abc.jpg','/imgab.jpg'
+  '/3.jpg', '/4.jpg'
 ];
 
 function App() {
@@ -61,14 +61,15 @@ function App() {
 
   return (
     <div className="app">
-      <h1 className="title">Car Carousel </h1>
+      <h1 className="title">Cars Carousel</h1>
       <div className="carousel">
-        <img src={images[index]} alt="Car" className="carousel-image" />
+        <img src={images[index]} alt="Cars" className="carousel-image" />
       </div>
       <div className="buttons">
         <button onClick={showPrevious}>Previous</button>
         <button onClick={showNext}>Next</button>
       </div>
+      <footer className="footer">SANJEV R M 212223040186</footer>
     </div>
   );
 }
@@ -77,49 +78,68 @@ export default App;
 ```
 ### App.css
 ```
-.App {
+.app {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  margin-top: 40px;
+  background-color: #f0f4f8;  /* light background color */
+  width: 600px;               /* set fixed width */
+  height: 600px;              /* set fixed height */
+  margin-left: auto;          /* center horizontally */
+  margin-right: auto;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
 }
 
-.App-link {
-  color: #61dafb;
+.title {
+  font-size: 2rem;
+  margin-bottom: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.carousel {
+  width: 500px;
+  height: auto;
+  margin: 0 auto; /* centers the carousel horizontally */
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #aaa;
+}
+
+.carousel-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto; /* centers the image if needed */
+}
+
+.buttons {
+  margin-top: 20px;
+}
+
+button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* New footer style */
+.footer {
+  margin-top: 30px;
+  font-size: 1rem;
+  color: #555;
+  font-style: italic;
 }
 ```
 
 ## OUTPUT
-![WhatsApp Image 2025-05-17 at 14 29 37_77f384fa](https://github.com/user-attachments/assets/79f3d270-391f-4e2e-b768-7c14a7972157)
+![WhatsApp Image 2025-05-19 at 16 20 02_8462dbc0](https://github.com/user-attachments/assets/f392cbc9-2c2f-4eaa-928b-41877b639038)
 
-![WhatsApp Image 2025-05-17 at 14 29 38_b1b5083e](https://github.com/user-attachments/assets/4257dc53-434c-4634-8abe-a8f4b8511965)
+![WhatsApp Image 2025-05-19 at 16 20 07_aab52d74](https://github.com/user-attachments/assets/c0b53823-7a88-4a96-acb2-a0e8dbcd0d6c)
+
 
 
 ## RESULT
