@@ -1,5 +1,5 @@
 # Ex05 Image Carousel
-## Date:
+## Date:19-05-2025
 
 ## AIM
 To create a Image Carousel using React 
@@ -39,9 +39,87 @@ Use setInterval to call the nextImage() function at regular intervals.
 Clean up the interval when the component unmounts using clearInterval to prevent memory leaks.
 
 ## PROGRAM
+### App.jsx
+```
+import React, { useState } from 'react';
+import './App.css';
 
+const images = [
+  '/abc.jpg','/imgab.jpg'
+];
+
+function App() {
+  const [index, setIndex] = useState(0);
+
+  const showPrevious = () => {
+    setIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
+  };
+
+  const showNext = () => {
+    setIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
+  };
+
+  return (
+    <div className="app">
+      <h1 className="title">Car Carousel </h1>
+      <div className="carousel">
+        <img src={images[index]} alt="Car" className="carousel-image" />
+      </div>
+      <div className="buttons">
+        <button onClick={showPrevious}>Previous</button>
+        <button onClick={showNext}>Next</button>
+      </div>
+    </div>
+  );
+}
+
+export default App;
+```
+### App.css
+```
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+```
 
 ## OUTPUT
+![WhatsApp Image 2025-05-17 at 14 29 37_77f384fa](https://github.com/user-attachments/assets/79f3d270-391f-4e2e-b768-7c14a7972157)
+
+![WhatsApp Image 2025-05-17 at 14 29 38_b1b5083e](https://github.com/user-attachments/assets/4257dc53-434c-4634-8abe-a8f4b8511965)
 
 
 ## RESULT
